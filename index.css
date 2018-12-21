@@ -1,0 +1,19 @@
+
+.bloges{
+    
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+.input{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: row;
+    }
+    .note{
+        display: flex;
+        flex-direction: column;
+    }
