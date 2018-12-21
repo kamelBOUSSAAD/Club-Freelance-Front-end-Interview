@@ -1,5 +1,5 @@
-
 function getBloges(siteID){
+   
     $.ajax({
         url: 'http://clubfreetst.herokuapp.com/blogs/'+siteID,
         data: {
@@ -11,20 +11,21 @@ function getBloges(siteID){
         dataType: 'json',
 
         success: function(itemData) {
+         $('#error').remove()
            
-            $('#blog').append('<h2> Blogger : '+itemData.blogger+'</h2> ')
-            $('#blog').append('<h2> Title : '+itemData.title+'</h2>')
+            $('#note').html('<h2> Blogger : '+itemData.blogger+'</h2> ')
+            $('#note').append('<h2> Title : '+itemData.title+'</h2>')
            
-            $('#note').append('<h2> Notes </h2>')
+            $('#note').append('<h2 class="note-title"> Notes </h2>')
             for(var i=0;i<=itemData.notes.length-1;i++)
             {
                var id = itemData.notes[i].id;
                var title = itemData.notes[i].title;
            
-               $('#note').append('<tr>')
-               $('#note').append('<td> Title : '+title+' </td>')
-               $("#note").append(`<td><button onCick="deleteNote(${id})">delete</button></td>`)
-               $('#note').append('</tr>')
+              
+               $('#note').append('<li> Title : '+title+' <button  onClick="deleteNote(document.getElementById('+id+').value)">delete </button> </li>')
+              
+               
               }   
             },
         type: 'GET'
@@ -38,6 +39,7 @@ function getBloges(siteID){
 
  
 function deleteNote(id){
+   alert('fghj')
    $.ajax({
       url: 'http://clubfreetst.herokuapp.com/notes/'+id,
       error: function() {

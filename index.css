@@ -5,6 +5,11 @@ display: flex;
 align-items: center;
 flex-direction: column;
 }
+.note-title{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: rgb(2, 60, 248)
+}
 .input{
     
     display: flex;
@@ -14,6 +19,17 @@ flex-direction: column;
     flex-direction: row;
     }
     .note{
+        border: solid 1px black;
+        height: 300px;
+        
+        line-height: 2px;
+        color: rgb(12, 10, 87);
         display: flex;
         flex-direction: column;
+        justify-content: center;
+       justify-items: center;
     }
+    .error{
+        color : red;
+    }
+

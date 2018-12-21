@@ -5,7 +5,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="Data.js"></script>
+        <script type="text/javascript" src="js.js"></script>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Test AJAX</title>
@@ -16,20 +16,32 @@
 <body>
       
   <div class="bloges">
-    <h1>Club Freelance Front-end Interview Kamel BOUSSAAD</h1>
-    
+      <h1>Club Freelance Front-end Interview Kamel BOUSSAAD</h1>
       <div class="input">
+
         <h4 style="margin-right:10px">siteID (5-7 digits)</h4>
         <input  type="text" id="siteID"></input>
-        <button style="margin-left:10px; width:60px" onclick="getBloges(document.getElementById('siteID').value)"> Go </button>
-     
-   </div>
+        <button onclick="validation(document.getElementById('siteID').value)"> Go </button>
+      </div>
 
+<div id="error" class="error"></div>
 <div id="delete" class=""></div>
-<div id="blog" class="blog">
-    
+<div id="blog" class="blog"></div>
+<ul id="note" class="note" style="width:30%"> </ul>
+
 </div>
-<table id="note" class="note" style="width:30%"> </table>
+   <script>
+      function validation(nb) 
+      {
+        if (isValid(nb))
+           {
+           
+            getBloges(nb)
+            
+           }
+
+      }
+    </script>
 
 
 </body>
